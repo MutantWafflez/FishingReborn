@@ -1,0 +1,563 @@
+﻿CatchData: {
+	// The data will be structured based on firstly fish ID (not necessarily ordered by), which itself will contain two objects:
+	// first, an int which represents the fish catch difficulty, and secondly, another int that represents
+	// the fish's movement type. The Fish IDs are ordered by their (item) rarity.
+	// Movement Type Key:
+	// 0 - Mixed
+	// 1 - Dart
+	// 2 - Smooth
+	// 3 - Sinker
+	// 4 - Floater
+
+
+	// Firstly, Normal non-tool Catches:
+
+
+	// White (Common) Rarity Fish:
+
+	// Atlantic Cod
+	2299: {
+		difficulty: 20,
+		movementType: 0
+	},
+
+	// Neon Tetra
+	2302: {
+		difficulty: 35,
+		movementType: 1
+	},
+
+	// Red Snapper
+	2301: {
+		difficulty: 25,
+		movementType: 1
+	},
+
+	// Tuna
+	2300: {
+		difficulty: 40,
+		movementType: 2
+	},
+
+	// Salmon
+	2298: {
+		difficulty: 50,
+		movementType: 0
+	},
+
+	// Bass
+	2290: {
+		difficulty: 15,
+		movementType: 0
+	},
+
+	// Flounder
+	4401: {
+		difficulty: 50,
+		movementType: 3
+	},
+
+	// Rock Lobster
+	4402: {
+		difficulty: 50,
+		movementType: 3
+	},
+
+	// Trout
+	2297: {
+		difficulty: 45,
+		movementType: 0
+	},
+
+	// Shrimp
+	2316: {
+		difficulty: 50,
+		movementType: 4
+	},
+
+	// Blue (Uncommon) Rarity Fish:
+
+	// Crimson Tigerfish
+	2305: {
+		difficulty: 45,
+		movementType: 1
+	},
+
+	// Specular Fish
+	2309: {
+		difficulty: 45,
+		movementType: 2
+	},
+
+	// Blue Jellyfish
+	2436: {
+		difficulty: 45,
+		movementType: 4
+	},
+
+	// Green Jellyfish
+	2437: {
+		difficulty: 55,
+		movementType: 4
+	},
+
+	// Pink Jellyfish
+	2438: {
+		difficulty: 65,
+		movementType: 4
+	},
+
+	// Stinkfish
+	2321: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Armored Cavefish
+	2303: {
+		difficulty: 50,
+		movementType: 3
+	},
+
+	// Damselfish
+	2304: {
+		difficulty: 30,
+		movementType: 2
+	},
+
+	// Double Cod
+	2313: {
+		difficulty: 50,
+		movementType: 0
+	},
+
+	// Ebonkoi
+	2318: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Frost Minnow
+	2306: {
+		difficulty: 25,
+		movementType: 1
+	},
+
+	// Hemopiranha
+	2319: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Honeyfin
+	2314: {
+		difficulty: 40,
+		movementType: 2
+	},
+
+	// Variegated Lardfish
+	2311: {
+		difficulty: 50,
+		movementType: 3
+	},
+
+	// Green (Rare) Rarity Fish:
+
+	// Obsidifish
+	2315: {
+		difficulty: 70,
+		movementType: 3
+	},
+
+	// Princess Fish
+	2307: {
+		difficulty: 75,
+		movementType: 4
+	},
+
+	// Flarefin Koi
+	2312: {
+		difficulty: 65,
+		movementType: 1
+	},
+
+	// Orange (Very Rare) Rarity Fish:
+
+	// Prismite
+	2310: {
+		difficulty: 75,
+		movementType: 0
+	},
+
+	// Light Red (Epic) Rarity Fish:
+
+	// Golden Carp
+	2308: {
+		difficulty: 90,
+		movementType: 2
+	},
+
+	// Chaos Fish
+	2317: {
+		difficulty: 80,
+		movementType: 1
+	},
+
+
+	// Secondly, Tool/Accessory/Non-normal Fish/Catches (again, sorted by item rarity):
+
+
+	// Blue (Uncommon) Rarity non-normal Catches:
+
+	// Frog Leg
+	2423: {
+		difficulty: 70,
+		movementType: 4
+	},
+
+	// Balloon Pufferfish
+	3225: {
+		difficulty: 70,
+		movementType: 4
+	},
+
+	// Bomb Fish
+	3196: {
+		difficulty: 65,
+		movementType: 0
+	},
+
+	// Purple Clubberfish
+	2330: {
+		difficulty: 60,
+		movementType: 3
+	},
+
+	// Frost Daggerfish
+	3197: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Oyster
+	4410: {
+		difficulty: 60,
+		movementType: 3
+	},
+
+	// Green (Rare) Rarity non-normal Catches:
+
+	// Swordfish
+	2332: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Orange (Very Rare) Rarity non-Normal Catches:
+
+	// Reaver Shark
+	2341: {
+		difficulty: 70,
+		movementType: 0
+	},
+
+	// Rockfish
+	2320: {
+		difficulty: 65,
+		movementType: 3
+	},
+
+	// Sawtooth Shark
+	2342: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Zephyr Fish
+	2420: {
+		difficulty: 80,
+		movementType: 4
+	},
+
+	// Pink+ (Legendary and up) Rarity non-Normal Catches:
+
+	// Toxikarp
+	3210: {
+		difficulty: 80,
+		movementType: 1
+	},
+
+	// Bladetongue
+	3211: {
+		difficulty: 80,
+		movementType: 1
+	},
+
+	// Crystal Serprent
+	3209: {
+		difficulty: 80,
+		movementType: 1
+	},
+
+	// Obsidian Swordfish
+	2331: {
+		difficulty: 60,
+		movementType: 3
+	},
+
+	// Scaly Truffle
+	2429: {
+		difficulty: 110,
+		movementType: 0
+	},
+
+
+	// Finally, Quest Fish (this time just sorted alphabetically):
+
+
+	// Amanita Fungifin
+	2475: {
+		difficulty: 40,
+		movementType: 3
+	},
+
+	// Angel Fish
+	2476: {
+		difficulty: 40,
+		movementType: 4
+	},
+
+	// Bat Fish
+	2450: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Bloody Manowar
+	2477: {
+		difficulty: 55,
+		movementType: 4
+	},
+
+	// Bonefish
+	2478: {
+		difficulty: 45,
+		movementType: 1
+	},
+
+	// Bumblebee Tuna
+	2451: {
+		difficulty: 55,
+		movementType: 1
+	},
+
+	// Bunnyfish
+	2479: {
+		difficulty: 30,
+		movementType: 4
+	},
+
+	// Cap'n Tunabeard
+	2480: {
+		difficulty: 65,
+		movementType: 0
+	},
+
+	// Catfish
+	2452: {
+		difficulty: 75,
+		movementType: 0
+	},
+
+	// Cloudfish
+	2453: {
+		difficulty: 50,
+		movementType: 2
+	},
+
+	// Clownfish
+	2481: {
+		difficulty: 45,
+		movementType: 0
+	},
+
+	// Cursedfish
+	2454: {
+		difficulty: 55,
+		movementType: 1
+	},
+
+	// Demonic Hellfish
+	2482: {
+		difficulty: 60,
+		movementType: 0
+	},
+
+	// Derpfish
+	2483: {
+		difficulty: 55,
+		movementType: 4
+	},
+
+	// Dirtfish
+	2455: {
+		difficulty: 30,
+		movementType: 3
+	},
+
+	// Dynamite Fish
+	2456: {
+		difficulty: 30,
+		movementType: 0
+	},
+
+	// Eater of Plankton
+	2457: {
+		difficulty: 45,
+		movementType: 0
+	},
+
+	// Fallen Starfish
+	2458: {
+		difficulty: 35,
+		movementType: 0
+	},
+
+	// Fishotron
+	2460: {
+		difficulty: 55,
+		movementType: 1
+	},
+
+	// Fishron
+	2484: {
+		difficulty: 60,
+		movementType: 1
+	},
+
+	// Guide Voodoo Fish
+	2472: {
+		difficulty: 45,
+		movementType: 2
+	},
+
+	// Harpyfish
+	2461: {
+		difficulty: 50,
+		movementType: 4
+	},
+
+	// Hungerfish
+	2462: {
+		difficulty: 50,
+		movementType: 1
+	},
+
+	// Ichorfish
+	2463: {
+		difficulty: 65,
+		movementType: 2
+	},
+
+	// Infected Scabbardfish
+	2485: {
+		difficulty: 65,
+		movementType: 1
+	},
+
+	// Jewelfish
+	2464: {
+		difficulty: 50,
+		movementType: 3
+	},
+
+	// Mirage Fish
+	2465: {
+		difficulty: 65,
+		movementType: 0
+	},
+
+	// Mudfish
+	2486: {
+		difficulty: 60,
+		movementType: 3
+	},
+
+	// Mutant Flinxfin
+	2466: {
+		difficulty: 45,
+		movementType: 0
+	},
+
+	// Pengfish
+	2467: {
+		difficulty: 50,
+		movementType: 2
+	},
+
+	// Pixiefish
+	2468: {
+		difficulty: 65,
+		movementType: 3
+	},
+
+	// Scarab Fish
+	4393: {
+		difficulty: 60,
+		movementType: 1
+	},
+
+	// Scorpio Fish
+	4394: {
+		difficulty: 65,
+		movementType: 1
+	},
+
+	// Slimefish
+	2487: {
+		difficulty: 20,
+		movementType: 0
+	},
+
+	// Spiderfish
+	2469: {
+		difficulty: 40,
+		movementType: 0
+	},
+
+	// The Fish of Cthulhu
+	2459: {
+		difficulty: 45,
+		movementType: 1
+	},
+
+	// Tropical Barracuda
+	2488: {
+		difficulty: 60,
+		movementType: 1
+	},
+
+	// Tundra Trout
+	2470: {
+		difficulty: 50,
+		movementType: 0
+	},
+
+	// Unicorn Fish
+	2471: {
+		difficulty: 70,
+		movementType: 0
+	},
+
+	// Wyverntail
+	2473: {
+		difficulty: 60,
+		movementType: 4
+	},
+
+	// Zombie Fish
+	2474: {
+		difficulty: 25,
+		movementType: 2
+	}
+}

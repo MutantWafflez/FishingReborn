@@ -1,0 +1,3 @@
+displayName = Fishing Reborn
+author = MutantWafflez
+version = 1.0

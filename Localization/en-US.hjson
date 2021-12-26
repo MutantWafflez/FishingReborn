@@ -1,0 +1,13 @@
+Mods: {
+	FishingReborn: {
+
+		BuffName: {
+			ReelingDebuff: "Reeling!"
+		}
+
+		BuffDescription: {
+			ReelingDebuff: "Greatly reduced movement speed, cannot fly"
+		}
+
+	}
+}
