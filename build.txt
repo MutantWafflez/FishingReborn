@@ -1,3 +1,4 @@
 displayName = Fishing Reborn
 author = MutantWafflez
 version = 1.0
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .idea\*, *.md
