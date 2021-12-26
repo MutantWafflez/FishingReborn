@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.UI;
@@ -88,6 +89,8 @@ namespace FishingReborn.Content.UI.Elements {
             _catchProgressBar.percentProgress = MathHelper.Clamp(_catchProgressBar.percentProgress + (barOverCrate ? positiveRateOfChange : negativeRateOfChange), 0f, 1f);
             if (_catchProgressBar.percentProgress >= 1f) {
                 crateCaught = true;
+
+                SoundEngine.PlaySound(SoundID.Coins);
             }
         }
 
