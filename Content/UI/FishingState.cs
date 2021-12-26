@@ -189,6 +189,9 @@ namespace FishingReborn.Content.UI {
             }
             else if (catchProgressBar.percentProgress <= 0f) {
                 fishingPlayer.FinishCatchingFish(false, false);
+
+                //Play fail sound
+                SoundEngine.PlaySound(SoundID.Item130);
             }
         }
     }
