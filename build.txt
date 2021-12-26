@@ -2,3 +2,4 @@ displayName = Fishing Reborn
 author = MutantWafflez
 version = 1.0
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .idea\*, *.md
+homepage = https://forums.terraria.org/index.php?threads/1-4-fishing-reborn.110103/
