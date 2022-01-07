@@ -9,5 +9,15 @@ Mods: {
 			ReelingDebuff: "Greatly reduced movement speed, cannot fly"
 		}
 
+		Configs: {
+			ClientSide: {
+				ConfigName: "Client Side"
+				PreferenceSettingsHeader: "Preference Settings"
+
+				PauseDuringMinigameLabel: "Autopause while Fishing (SinglePlayer Only)"
+				PauseDuringMinigameTooltip: "Determines whether or not the game will pause during the Fishing Minigame."
+			}
+		}
+
 	}
 }

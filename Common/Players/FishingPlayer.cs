@@ -1,5 +1,6 @@
 ﻿using FishingReborn.Common.Systems;
 using FishingReborn.Content.StatusEffects.Debuffs;
+using FishingReborn.Custom.Utils;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
@@ -22,6 +23,12 @@ namespace FishingReborn.Common.Players {
         /// catching a fish.
         /// </summary>
         public bool IsCatchingFish => _isCatchingFish;
+
+        /// <summary>
+        /// Public access for whether or not the player is ACTIVELY catching a
+        /// fish in the fishing minigame, and not waiting for the game to start.
+        /// </summary>
+        public bool IsPlayingMinigame => _isCatchingFish && !_isWaitingForGame;
 
         /// <summary>
         /// Whether or not the player is currently in the waiting period between the
