@@ -77,6 +77,11 @@ namespace FishingReborn.Common.Players {
                 Player.AddBuff(ModContent.BuffType<ReelingDebuff>(), 5);
             }
 
+            // End minigame if player dies during game
+            if (_isCatchingFish && Player.dead) {
+                FinishCatchingFish(false, false);
+            }
+
             if (!_isWaitingForGame) {
                 return;
             }
