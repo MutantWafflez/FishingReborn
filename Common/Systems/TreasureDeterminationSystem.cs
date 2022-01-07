@@ -20,22 +20,24 @@ namespace FishingReborn.Common.Systems {
         public override void Load() {
             _possibleTreasure = new List<TreasureData>() {
                 //First, the "general" crates (wood/iron/gold):
-                new TreasureData(ItemID.WoodenCrate, ItemID.WoodenCrateHard, 1f, (player, attempt) => !attempt.inLava),
-                new TreasureData(ItemID.IronCrate, ItemID.IronCrateHard, 0.6f, (player, attempt) => !attempt.inLava),
-                new TreasureData(ItemID.GoldenCrate, ItemID.GoldenCrateHard, 0.25f, (player, attempt) => !attempt.inLava),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.WoodenCrate : ItemID.WoodenCrateHard, 1f, (player, attempt) => !attempt.inLava),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.IronCrate : ItemID.IronCrateHard, 0.6f, (player, attempt) => !attempt.inLava),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.GoldenCrate : ItemID.GoldenCrateHard, 0.25f, (player, attempt) => !attempt.inLava),
                 //Second, biome/region specific crates:
-                new TreasureData(ItemID.JungleFishingCrate, ItemID.JungleFishingCrateHard, 0.5f, (player, attempt) => player.ZoneJungle),
-                new TreasureData(ItemID.FloatingIslandFishingCrate, ItemID.FloatingIslandFishingCrateHard, 0.5f, (player, attempt) => player.ZoneSkyHeight || attempt.heightLevel == 0),
-                new TreasureData(ItemID.CorruptFishingCrate, ItemID.CorruptFishingCrateHard, 0.5f, (player, attempt) => player.ZoneCorrupt),
-                new TreasureData(ItemID.CrimsonFishingCrate, ItemID.CrimsonFishingCrateHard, 0.5f, (player, attempt) => player.ZoneCrimson),
-                new TreasureData(ItemID.HallowedFishingCrate, ItemID.HallowedFishingCrateHard, 0.5f, (player, attempt) => player.ZoneHallow),
-                new TreasureData(ItemID.DungeonFishingCrate, ItemID.DungeonFishingCrateHard, 0.5f, (player, attempt) => player.ZoneDungeon),
-                new TreasureData(ItemID.FrozenCrate, ItemID.FrozenCrateHard, 0.5f, (player, attempt) => player.ZoneSnow),
-                new TreasureData(ItemID.OasisCrate, ItemID.OasisCrateHard, 0.5f, (player, attempt) => player.ZoneDesert || player.ZoneUndergroundDesert),
-                new TreasureData(ItemID.LavaCrate, ItemID.LavaCrateHard, 0.5f, (player, attempt) => attempt.inLava && attempt.CanFishInLava),
-                new TreasureData(ItemID.OceanCrate, ItemID.OceanCrateHard, 0.5f, (player, attempt) => attempt.heightLevel <= 1 && (attempt.X < 380 || attempt.X > Main.maxTilesX - 380) && attempt.waterTilesCount > 1000),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.JungleFishingCrate : ItemID.JungleFishingCrateHard, 0.5f, (player, attempt) => player.ZoneJungle),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.FloatingIslandFishingCrate : ItemID.FloatingIslandFishingCrateHard, 0.5f, (player, attempt) => player.ZoneSkyHeight || attempt.heightLevel == 0),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.CorruptFishingCrate : ItemID.CorruptFishingCrateHard, 0.5f, (player, attempt) => player.ZoneCorrupt),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.CrimsonFishingCrate : ItemID.CrimsonFishingCrateHard, 0.5f, (player, attempt) => player.ZoneCrimson),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.HallowedFishingCrate : ItemID.HallowedFishingCrateHard, 0.5f, (player, attempt) => player.ZoneHallow),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.DungeonFishingCrate : ItemID.DungeonFishingCrateHard, 0.5f, (player, attempt) => player.ZoneDungeon),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.FrozenCrate : ItemID.FrozenCrateHard, 0.5f, (player, attempt) => player.ZoneSnow),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.OasisCrate : ItemID.OasisCrateHard, 0.5f, (player, attempt) => player.ZoneDesert || player.ZoneUndergroundDesert),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.LavaCrate : ItemID.LavaCrateHard, 0.5f, (player, attempt) => attempt.inLava && attempt.CanFishInLava),
+                new TreasureData((player, attempt) => !Main.hardMode ? ItemID.OceanCrate : ItemID.OceanCrateHard, 0.5f,
+                    (player, attempt) => attempt.heightLevel <= 1 && (attempt.X < 380 || attempt.X > Main.maxTilesX - 380) && attempt.waterTilesCount > 1000),
                 //Finally, non-crate treasures
-                new TreasureData(ItemID.AlchemyTable, ItemID.AlchemyTable, 0.05f, (player, attempt) => player.ZoneDungeon)
+                new TreasureData((player, attempt) => ItemID.AlchemyTable, 0.05f, (player, attempt) => player.ZoneDungeon),
+                new TreasureData((player, attempt) => ItemID.CombatBook, 0.15f, (player, attempt) => Main.bloodMoon && !NPC.combatBookWasUsed)
             };
         }
 
@@ -49,7 +51,7 @@ namespace FishingReborn.Common.Systems {
 
             foreach (TreasureData possibleTreasure in _possibleTreasure) {
                 if (possibleTreasure.catchRequirement.Invoke(player, attempt)) {
-                    randomizer.Add(Main.hardMode ? possibleTreasure.hardModeType : possibleTreasure.normalModeType, possibleTreasure.treasureWeight);
+                    randomizer.Add(possibleTreasure.itemSelection.Invoke(player, attempt), possibleTreasure.treasureWeight);
                 }
             }
 

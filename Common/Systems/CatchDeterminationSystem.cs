@@ -26,7 +26,6 @@ namespace FishingReborn.Common.Systems {
             PopulateLavaCatches();
             PopulateHoneyCatches();
             PopulateTrashCatches();
-            PopulateBloodMoonCatches();
             PopulateGeneralCatches();
             PopulateCorruptionCatches();
             PopulateCrimsonCatches();
@@ -132,18 +131,6 @@ namespace FishingReborn.Common.Systems {
             });
 
             _possiblePools.Add(trashPool);
-        }
-
-        private void PopulateBloodMoonCatches() {
-            BloodMoonCatchPool bloodMoonPool = new BloodMoonCatchPool {
-                PotentialCatches = new List<CatchWeight>()
-            };
-
-            bloodMoonPool.PotentialCatches.AddRange(new CatchWeight[] {
-                new CatchWeight(ItemID.CombatBook, additionalConditions: new CombatBookNotUsedCondition())
-            });
-
-            _possiblePools.Add(bloodMoonPool);
         }
 
         private void PopulateGeneralCatches() {

@@ -9,14 +9,10 @@ namespace FishingReborn.Custom.Structs {
     /// </summary>
     public readonly struct TreasureData {
         /// <summary>
-        /// The type of the treasure acquired in normal mode.
+        /// The method/function that returns what item is given to the player if all
+        /// other conditions/requirements are satisfied.
         /// </summary>
-        public readonly int normalModeType;
-
-        /// <summary>
-        /// The type of the treasure acquired in hard mode.
-        /// </summary>
-        public readonly int hardModeType;
+        public readonly Func<Player, FishingAttempt, int> itemSelection;
 
         /// <summary>
         /// The weight this treasure will hold when being selected.
@@ -29,9 +25,8 @@ namespace FishingReborn.Custom.Structs {
         /// </summary>
         public readonly Func<Player, FishingAttempt, bool> catchRequirement;
 
-        public TreasureData(int normalModeType, int hardModeType, float treasureWeight, Func<Player, FishingAttempt, bool> catchRequirement) {
-            this.normalModeType = normalModeType;
-            this.hardModeType = hardModeType;
+        public TreasureData(Func<Player, FishingAttempt, int> itemSelection, float treasureWeight, Func<Player, FishingAttempt, bool> catchRequirement) {
+            this.itemSelection = itemSelection;
             this.treasureWeight = treasureWeight;
             this.catchRequirement = catchRequirement;
         }
