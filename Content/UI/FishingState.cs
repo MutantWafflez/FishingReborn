@@ -176,8 +176,8 @@ namespace FishingReborn.Content.UI {
         /// </summary>
         /// <param name="barContainsFish"> Whether or not the catch bar is over the fish. </param>
         private void UpdateProgressBar(bool barContainsFish) {
-            // 10.25% gain per second
-            float positiveRateOfChange = 0.1025f / 60f;
+            // 14.25% gain per second
+            float positiveRateOfChange = 0.1425f / 60f;
             // 14.35% loss per second
             float negativeRateOfChange = -0.1435f / 60f;
 
