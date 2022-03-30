@@ -1,6 +1,5 @@
 ﻿using FishingReborn.Common.Systems;
 using FishingReborn.Content.StatusEffects.Debuffs;
-using FishingReborn.Custom.Utils;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
@@ -155,7 +154,7 @@ namespace FishingReborn.Common.Players {
             if (caughtCrate && currentFishingAttempt is not null) {
                 TreasureDeterminationSystem treasureDeterminationSystem = ModContent.GetInstance<TreasureDeterminationSystem>();
 
-                Player.QuickSpawnItem(treasureDeterminationSystem.RetrieveTreasure(Player, currentFishingAttempt.Value));
+                Player.QuickSpawnItem(new EntitySource_FishedOut(Player), treasureDeterminationSystem.RetrieveTreasure(Player, currentFishingAttempt.Value));
             }
 
             //Then, reset all applicable fields
