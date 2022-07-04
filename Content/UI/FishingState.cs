@@ -15,6 +15,11 @@ namespace FishingReborn.Content.UI {
     /// UIState class that handles the fishing minigame.
     /// </summary>
     public class FishingState : UIState {
+
+        public static readonly SoundStyle EnterBarSound = new SoundStyle(nameof(FishingReborn) + "/Assets/Audio/Sounds/EnterFishBar");
+
+        public static readonly SoundStyle ExitBarSound = new SoundStyle(nameof(FishingReborn) + "/Assets/Audio/Sounds/ExitFishBar");
+
         /// <summary>
         /// The background UIPanel, the farthest back.
         /// </summary>
@@ -135,13 +140,13 @@ namespace FishingReborn.Content.UI {
 
             //If the fish has entered catch bar, play "enter" sound
             if (barContainsFish && !playerCatchBar.barOverFish) {
-                SoundEngine.PlaySound(SoundLoader.GetLegacySoundSlot(ModContent.GetInstance<FishingReborn>(), "Assets/Audio/Sounds/EnterFishBar"));
+                SoundEngine.PlaySound(EnterBarSound);
             }
             //Otherwise, the fish has exited the catch bar, play "exit" sound
             else if (!barContainsFish && playerCatchBar.barOverFish) {
-                SoundEngine.PlaySound(SoundLoader.GetLegacySoundSlot(ModContent.GetInstance<FishingReborn>(), "Assets/Audio/Sounds/ExitFishBar"));
+                SoundEngine.PlaySound(ExitBarSound);
             }
-            //HandleReelSFX(barContainsFish); to be re-added when sound_fix is merged
+            //HandleReelSFX(barContainsFish); 
 
             //If the bar is intersecting the fish, update accordingly
             playerCatchBar.barOverFish = fishIcon.shouldShake = barContainsFish;
@@ -155,12 +160,14 @@ namespace FishingReborn.Content.UI {
             UpdateProgressBar(barContainsFish);
         }
 
+        //TODO: Add fishing reel sound
+        /*
         /// <summary>
         /// Handles SFX for the minigame. Includes the reeling sound, namely.
         /// </summary>
         /// <param name="barContainsFish"> Whether or not the catch bar is over the fish. </param>
         private void HandleReelSFX(bool barContainsFish) {
-            // To be re-added when sound_fix is merged
+            
             ActiveSound reelingSound = SoundEngine.GetActiveSound(_reelSoundInstance);
 
             if (barContainsFish && !(reelingSound?.IsPlaying ?? false)) {
@@ -169,7 +176,7 @@ namespace FishingReborn.Content.UI {
             else if (!barContainsFish && (reelingSound?.IsPlaying ?? false)) {
                 reelingSound.Stop();
             }
-        }
+        }*/
 
         /// <summary>
         /// Updates the progress bar either up or down by the passed in boolean value.

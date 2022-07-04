@@ -8,6 +8,9 @@ namespace FishingReborn.Content.UI.Elements {
     /// Element that acts as the movement bar to catch the fish in the Fishing minigame.
     /// </summary>
     public class PlayerFishBarElement : UIPanel {
+
+        public static readonly SoundStyle GroundTapSound = new SoundStyle(nameof(FishingReborn) + "/Assets/Audio/Sounds/GroundTap");
+
         /// <summary>
         /// The velocity of the bar, on the vertical scale. Remember negative is up, positive is down.
         /// It is measured in fraction moved per tick.
@@ -45,7 +48,7 @@ namespace FishingReborn.Content.UI.Elements {
             if (VAlign == 1f && verticalVelocity >= 0.0025) {
                 verticalVelocity = -verticalVelocity * 0.55f;
                 // Make the tapping sound of hitting the bottom
-                SoundEngine.PlaySound(SoundLoader.GetLegacySoundSlot(ModContent.GetInstance<FishingReborn>(), "Assets/Audio/Sounds/GroundTap"));
+                SoundEngine.PlaySound(GroundTapSound);
             }
 
             //Reset Velocity if sitting at top or bottom
